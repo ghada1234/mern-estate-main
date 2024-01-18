@@ -34,10 +34,10 @@ app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
 
 
-app.use(express.static(path.join(__dirname, 'api/client/src')));
+app.use(express.static(path.join(__dirname, 'api/client')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'api','client', 'src', 'index.html'));
+  res.sendFile(path.join(__dirname, 'api','client', 'index.html'));
 })
 
 app.use((err, req, res, next) => {
